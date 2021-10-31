@@ -55,7 +55,7 @@ namespace webservice
             //string s;
             //s = ConfigurationManager.ConnectionStrings("mtto").ConnectionString;
 
-            // se debe agregar la referencia al proyecto de systemconfiguracion y agregar el using System.Configuration;
+            /// se debe agregar la referencia al proyecto de systemconfiguracion y agregar el using System.Configuration;
 
             string conn = ConfigurationManager.ConnectionStrings["mtto"].ConnectionString;
             string s;
