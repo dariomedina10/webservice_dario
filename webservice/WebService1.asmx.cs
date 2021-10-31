@@ -59,7 +59,7 @@ namespace webservice
 
             string conn = ConfigurationManager.ConnectionStrings["mtto"].ConnectionString;
             string s;
-
+            
             {
                 SqlConnection conex = new SqlConnection(conn);
                 SqlDataAdapter da = new SqlDataAdapter("select *from control where cedula =  '" +  cedula + "' ", conex);
