@@ -15,7 +15,7 @@ namespace consumir_ws
             //se agrega la referencia de servicio con el proyecto webservice creado
             // se instancia el nombre del archivo webservice
             Ws_listado.WebService1SoapClient ws = new Ws_listado.WebService1SoapClient();
-            //la definicion del dataset se asocia a un metodo del objeto instanciado del webservice
+            //la definicion del dataset se asocia a un metodo del objeto instanciado del webservice.
             DataSet ds = ws.listado_control();
             GridView1.DataSource = ds.Tables[0];
             GridView1.DataBind();
