@@ -20,5 +20,15 @@ namespace consumir_ws
             GridView1.DataSource = ds.Tables[0];
             GridView1.DataBind();
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Ws_listado.WebService1SoapClient ws = new Ws_listado.WebService1SoapClient();
+            //la definicion del dataset se asocia a un metodo del objeto instanciado del webservice.
+            DataSet ds = ws.listado_control_cedula(TextBox1.Text);
+
+            GridView1.DataSource = ds.Tables[0];
+            GridView1.DataBind();
+        }
     }
 }
