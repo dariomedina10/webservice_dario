@@ -70,6 +70,17 @@ namespace webservice
             }
         }
 
+        [WebMethod]
+
+        public DataSet listado_control_sp()
+        {
+            SqlConnection conex = new SqlConnection(conn);
+            SqlDataAdapter da = new SqlDataAdapter("select *from control", conex);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+
+        }
 
     }
 }
