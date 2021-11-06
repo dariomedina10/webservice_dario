@@ -74,11 +74,22 @@ namespace webservice
 
         public DataSet listado_control_sp()
         {
-            SqlConnection conex = new SqlConnection(conn);
-            SqlDataAdapter da = new SqlDataAdapter("select *from control", conex);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            return ds;
+
+            string conn = ConfigurationManager.ConnectionStrings["mtto"].ConnectionString;
+            string s;
+
+            
+            {
+                SqlConnection conex = new SqlConnection(conn);
+                SqlCommand cmd = new SqlCommand("mostrar_control", conex);
+                cmd.CommandType = CommandType.StoredProcedure;
+               
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+
+            }
 
         }
 
