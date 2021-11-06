@@ -93,5 +93,30 @@ namespace webservice
 
         }
 
+
+        [WebMethod]
+
+        public DataSet listado_control_sp_cedula(string cedula)
+        {
+
+            string conn = ConfigurationManager.ConnectionStrings["mtto"].ConnectionString;
+            string s;
+
+
+            {
+                SqlConnection conex = new SqlConnection(conn);
+                SqlCommand cmd = new SqlCommand("mostrar_id_control_cedula", conex);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@cedula", SqlDbType.BigInt).Value = cedula;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+
+            }
+
+        }
+
+
     }
 }
